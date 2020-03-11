@@ -1,0 +1,120 @@
+{:aliases {
+  :repl {:extra-deps {com.bhauman/rebel-readline {:mvn/version "RELEASE"}
+                               com.gfredericks/user.clj {:mvn/version "RELEASE"}
+                               org.clojure/core.async {:mvn/version "RELEASE"}
+                               org.clojure/core.logic {:mvn/version "RELEASE"}
+                               org.clojure/test.check {:mvn/version "RELEASE"}
+                               com.clojure-goes-fast/clj-java-decompiler {:mvn/version "RELEASE"}
+                               com.clojure-goes-fast/clj-memory-meter {:mvn/version "RELEASE"}
+                               com.clojure-goes-fast/clj-async-profiler {:mvn/version "RELEASE"}
+                               com.clojure-goes-fast/jvm-alloc-rate-meter {:mvn/version "RELEASE"}
+                               com.clojure-goes-fast/jvm-hiccup-meter {:mvn/version "RELEASE"}
+                               io.aviso/pretty {:mvn/version "RELEASE"}
+                               mvxcvi/puget {:mvn/version "RELEASE"}
+                               com.hypirion/clj-xchart {:mvn/version "RELEASE"}
+                               org.clojure/clojure {:mvn/version "RELEASE"}
+                               generateme/fastmath {:mvn/version "RELEASE"}
+                               clj-commons/pomegranate {:mvn/version "RELEASE"}}
+                  :main-opts  ["-m" "rebel-readline.main"]}
+;;
+:nrepl {:extra-deps {nrepl {:mvn/version "RELEASE"}}
+          :main-opts ["-m" "nrepl.cmdline"]}
+   :rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "RELEASE"}}
+          :main-opts ["-m" "rebel-readline.main"]}
+      :rebl-8
+  {:extra-deps {org.clojure/core.async {:mvn/version "0.6.532"}
+                ;; deps for file datafication (0.9.149 or later)
+                org.clojure/data.csv {:mvn/version "0.1.4"}
+                org.clojure/data.json {:mvn/version "0.2.7"}
+                org.yaml/snakeyaml {:mvn/version "1.25"}
+                com.cognitect/rebl
+                ;; adjust to match your install location
+                {:local/root "/Developer/REBL/latest/REBL.jar"}}
+   :main-opts ["-m" "cognitect.rebl"]}
+  :rebl-11
+  {:extra-deps {org.clojure/core.async {:mvn/version "0.6.532"}
+                ;; deps for file datafication (0.9.149 or later)
+                org.clojure/data.csv {:mvn/version "0.1.4"}
+                org.clojure/data.json {:mvn/version "0.2.7"}
+                org.yaml/snakeyaml {:mvn/version "1.25"}
+                com.cognitect/rebl
+                ;; adjust to match your install location
+                {:local/root "/Developer/REBL/latest/REBL.jar"}
+                org.openjfx/javafx-fxml     {:mvn/version "11.0.2"}
+                org.openjfx/javafx-controls {:mvn/version "11.0.2"}
+                org.openjfx/javafx-graphics {:mvn/version "11.0.2"}
+                org.openjfx/javafx-media    {:mvn/version "11.0.2"}
+                org.openjfx/javafx-swing    {:mvn/version "11.0.2"}
+                org.openjfx/javafx-base     {:mvn/version "11.0.2"}
+                org.openjfx/javafx-web      {:mvn/version "11.0.2"}}
+   :main-opts ["-m" "cognitect.rebl"]}
+  :rebl-8-win
+  {:extra-deps {org.clojure/core.async {:mvn/version "0.6.532"}
+                ;; deps for file datafication (0.9.149 or later)
+                org.clojure/data.csv {:mvn/version "0.1.4"}
+                org.clojure/data.json {:mvn/version "0.2.7"}
+                org.yaml/snakeyaml {:mvn/version "1.25"}
+                com.cognitect/rebl
+                ;; adjust to match your install location
+                {:local/root "C:\\Developer\\REBL\\latest\\REBL.jar"}}
+   :main-opts ["-m" "cognitect.rebl"]}
+  :rebl-11-win
+  {:extra-deps {org.clojure/core.async {:mvn/version "0.6.532"}
+                ;; deps for file datafication (0.9.149 or later)
+                org.clojure/data.csv {:mvn/version "0.1.4"}
+                org.clojure/data.json {:mvn/version "0.2.7"}
+                org.yaml/snakeyaml {:mvn/version "1.25"}
+                com.cognitect/rebl
+                ;; adjust to match your install location
+                {:local/root "C:\\Developer\\REBL\\latest\\REBL.jar"}
+                org.openjfx/javafx-fxml     {:mvn/version "11.0.2"}
+                org.openjfx/javafx-controls {:mvn/version "11.0.2"}
+                org.openjfx/javafx-graphics {:mvn/version "11.0.2"}
+                org.openjfx/javafx-media    {:mvn/version "11.0.2"}
+                org.openjfx/javafx-swing    {:mvn/version "11.0.2"}
+                org.openjfx/javafx-base     {:mvn/version "11.0.2"}
+                org.openjfx/javafx-web      {:mvn/version "11.0.2"}}
+   :main-opts ["-m" "cognitect.rebl"]}
+:liquid
+  {:extra-deps {mogenslund/liquid {:mvn/version "RELEASE"}}
+   :main-opts ["-m" "dk.salza.liq.core"]}
+;; project creation from templates:
+  ;; - see https://github.com/seancorfield/clj-new
+  ;; - create an application project:
+  ;;   - clj -A:new app myname/myapp
+  ;;   - cd myapp
+  ;;   - clj -m myname.myapp # run it!
+  ;;   - clj -A:test:runner # run the tests!
+  ;; - create a library project:
+  ;;   - clj -A:new lib myname/my-cool-lib
+  ;;   - cd my-cool-lib
+  ;;   - clj -A:test:runner # run the tests!
+  :new {:extra-deps {seancorfield/clj-new {:mvn/version "RELEASE"}}
+        :main-opts ["-m" "clj-new.create"]}
+
+  ;; uberjar building:
+  ;; - see https://github.com/seancorfield/depstar for a minimalist approach:
+  ;;   - clj -A:uberjar result.jar
+  ;; - to run it:
+  ;;   - java -cp result.jar clojure.main -m mymain.namespace
+  ;; - build a library JAR:
+  ;;   - clj -A:jar result-lib.jar
+  :uberjar {:extra-deps {seancorfield/depstar {:mvn/version "RELEASE"}}
+            :main-opts ["-m" "hf.depstar.uberjar"]}
+  :jar {:extra-deps {seancorfield/depstar {:mvn/version "RELEASE"}}
+        :main-opts ["-m" "hf.depstar.jar"]}
+
+  ;; jar installation and deployment:
+  ;; - see https://github.com/slipset/deps-deploy
+  ;;   - clj -A:install project.jar
+  ;;   - clj -A:deploy project.jar
+  ;; - these rely on having a pom.xml file and, for deployment, these two
+  ;;   environment variables: CLOJARS_USERNAME, CLOJARS_PASSWORD
+  :install {:extra-deps {deps-deploy {:mvn/version "RELEASE"}}
+            :main-opts ["-m" "deps-deploy.deps-deploy" "install"]}
+  :deploy {:extra-deps {deps-deploy {:mvn/version "RELEASE"}}
+           :main-opts ["-m" "deps-deploy.deps-deploy" "deploy"]}
+
+  ;; - inspired by Ruby's -pne command line option which lets you process lines of stdin bound to $_
+  ;; - usage: cat file-of-numbers.txt | clj -Mpne -e '($ (-> $_ Long/parseLong inc))'
+  :pne {:main-opts,["-e","(defmacro,$,[&,body],(list,'while,(list,'when-let,'[$_,(read-line)],(let,[v,(gensym)],(list,'let,(vector,v,(list*,'do,body)),(list,'println,v))),'$_)))"]}}}}}
