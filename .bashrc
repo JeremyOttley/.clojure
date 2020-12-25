@@ -1,7 +1,7 @@
 function clj() {
     if [[ -z $@ ]]
     then
-        command clojure -A:repl
+        command clojure -M:repl
     else
         command clj $@
     fi
